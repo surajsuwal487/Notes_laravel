@@ -1,0 +1,126 @@
+#Command
+php artisan make:controller CategoryController --resource -model=Category
+
+
+#ROUTE MODEL BINDING
+
+beware of separate condition that could be additonally added to route model binding.
+
+public function show($id){
+	$product = findOrFail($id);
+}
+
+//using route model binding
+public function show(Product $product){
+	
+}
+
+By default routeModel binding use id incase you want to use slug.Realesed in laravel 7.
+Route::get('products/{product:slug}/export')
+->missing(function(){
+	return view('products.notfound');
+});
+
+//You can put this in model too
+public function getRouteKeyName(){
+	return 'slug';
+}
+
+
+#Accessors & Mutators
+//'protected' not mean to call outside of this class.
+
+public function startDate(): Attribut
+{
+	
+}
+
+
+#ELOQUENT COLLECTION
+map()= going through each of the intem and transform it into something else.
+
+#OBSERVER
+ -Notifying something. According to MVC principle, logic should be somewhere else not in the controller, Controller should only take care of main actions, give the results or redirect back or return JSON or something like that.
+
+ 
+ #Event Handler
+ 	-If something happern. Something should be fired.
+
+ #Gate Policies Role Permission
+ 	*ROLE
+ 		what if you want to totaly seperate admin area and user area with totally different functionality, totally different URLs, functionas and every things.
+ 		So what if you have not only admin and user but some other roles like manager or supervisor or something like that. You need to crate a seperate table like User, Administrator and Manager.
+
+ 		If you want one user has multiple roles you need to have belongs to many relationship role_user pivot table and you would have different condition wheter atleast one role of user correspond to. 
+
+ 		public function create(User $user){
+ 		return $user->role_id == 2; //admin
+ 		}
+
+ 		public function update(User $user, Task $task){
+ 		return in_array($user->role_id, [2,3]);
+ 		}
+
+ 		//If you have create some constants you can do like this.
+ 		public const IS_USER = 1;
+ 		public const IS_ADMIN = 2;
+ 		public const IS_MANAGER = 3;
+
+ 		 public function create(User $user){
+ 		return $user->role_id == Role::IS_ADMIN); //admin
+ 		}
+
+
+
+ 	*GATES
+ 		Laravel gates is another word form permission. Create permission name.
+ 		We will use gates with add can in the blade to visualize the buttons.
+
+ 		Gate::('tasks_create', function(User $user){ return $user->is_admin}));
+ 		Gate::('task_edit', fn(User $user) => $user->is_admin);
+
+ 	*POLICIES
+ 		Grouping those permisions by model.Example, we can create one policy called task policy and assign those method inside.
+ 		Policies are discovered automatically.
+
+ 		public function update(User $user, Task $task)
+ 		{
+ 			return $user->is_admin || (auth()->check() && $task->user_id == auth()->id());
+ 		}
+
+ #Dependency Injection
+ 	Dependency injection is a design pattern in which an object or function receives other objects or functions that it depends on.
+
+ #Exception Handling
+ 	Exception Handling is a mechanism to handle runtime errors such as ClassNotFoundException, IOException, SQLException, RemoteException, etc.
+
+ #Laravel_api_challenge
+  *Laravel collection method implode with comma.
+  'categories' => $this->author->implode('name', ',');
+
+#Eager loading
+	*bad method
+	public function index()
+	{
+		$books = Book::active()->paginate(25);
+	}
+
+	*good method
+	public function index()
+	{
+		#books = Book::with(['authors', 'genrest'])
+		->approved()
+		->latest()
+		->paginate();
+	}
+
+#Larvel Exception
+	-The whole thing about exception is you can catch multiple exceptions that comes form differnt part of your code or some package or some serviece class and in case of different exception you're showning differnte exception message doing different action about that
+	try{
+
+	//The main question is class name of the exception. If you want to catch any exception us '\Exception'.
+	}catch(\Exception $exception){
+	//message that actually comes form the exception.
+	dd($exception->getMessage());
+	dd(get_class($exception));
+	}

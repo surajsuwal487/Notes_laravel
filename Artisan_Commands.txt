@@ -1,0 +1,122 @@
+
+PROJECT
+composer install
+compser update
+composer install --ignore-platform-reqs
+cp .env.example .env
+php artisan key:generate
+php artisan migrate:fresh --seed
+php artisan storage:link
+php artisan passport:install
+php artisan passport:keys
+
+Module
+    php artisan module:make Blog
+    php artisan module:make-request BlogRequest Blog
+    php artisan module:migrate-refresh Blog
+    php artisan module:migrate:fresh Blog
+    php artisan module:make-model Blog -m Blog
+    php artisan module:make-controller BlogController Blog
+    php artisan make:Seeder BlogSeeder
+    php artisan db:seed --class = BlogSeeder
+
+API
+    php artisan module:make-controller Api/BlpgController Blog
+    php artisan make:controller Api/ApiBaseController Blog
+
+Others
+    php artisan make:migration add_deleted_at_to_customers_table
+    php artisan make:import UsersImport --model=User
+    php artisan cache:clear
+    php artisan route:clear
+    php artinsa optimize
+    composer require tymon/jwt-auth --ignore-platform-req=php
+    php artisan config:cache &&  php artisan config:clear &&  composer dump-autoload -o
+    php artisan make:auth
+    php artisan cache:forget spatie.permission.cache
+    php artisan queue:table ->jobs table and migrate
+    php artisan make job
+    php artisan queue:listen
+    php artisan queue:work
+
+
+SOME USEFUL GIT COMMAND
+    git branch main
+    git checkout suraj
+    git checkout -b suraj
+    git push origin main
+    git commit -m "first commit, project setup"
+
+    git commit -m "merged with anu branch"
+    git pull origin anu
+
+    git add .
+    git commit -m "Message"
+    git push origin suraj
+
+Hosting Commands
+    php artisan serve --port=8080
+    php artisan serve --host=192.168.0.137 --port=8080
+
+    Notes
+    suraj=writer=sarthak
+    anu=editor=john
+    bikal=publiseher=jane
+    suraz=admin=alex
+
+
+
+Route Naming
+    /view-products
+    /create-product
+    /store-product
+    /edit-product
+    /update-product
+    /delete-product
+
+    /get
+    /store
+    /update
+    /delete
+
+View Naming
+    view-products.blade.php
+    create-product.blade.php
+    edit-product.blade.php
+    product-detail.blade.php
+
+Shortcut Keys
+
+    ctrl + d
+        select the next occurence.
+
+    ctrl + b
+        open close side bar.
+
+    ctrl + right/left arrow key.
+        select a word.
+
+    alt + cick
+        add multiple cursor.
+
+    ctrl + q
+        close whatever you are viewing.
+
+    window + d
+        slow or hide the desktop.
+
+    ctrl + esc
+        open the start menu.
+
+    window + i
+        open settings.
+
+
+    Policy
+        -Policy is a way of authorizing user for a particular model.
+    
+
+
+
+
+
