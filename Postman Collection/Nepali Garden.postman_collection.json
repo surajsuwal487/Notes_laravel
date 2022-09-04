@@ -1,0 +1,2100 @@
+{
+	"info": {
+		"_postman_id": "1e7e6806-59ec-4dc4-98a9-92fe75574f55",
+		"name": "Nepali Garden",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16527445"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "login",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "nepaligarden@admin.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "nepaligarden",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}user/login",
+							"host": [
+								"{{url}}user"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}user/logout",
+							"host": [
+								"{{url}}user"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "userRegister",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNTM0MWQ5NjRhNmVlNmYyMDVkMzg2MDhiZDUyNTljZDgwNTU1ZDYzNTNhODA0ZTRkNDNlYTgwNzFkYThkYmMzYWFmN2Y4NmQ2YWY5MDQ2ZDciLCJpYXQiOjE2Mjk4NzY2MjkuMzc2MTkyLCJuYmYiOjE2Mjk4NzY2MjkuMzc2MTk4LCJleHAiOjE2NjE0MTI2MjkuMzY2NTIsInN1YiI6IjIiLCJzY29wZXMiOltdfQ.YfuPda0VK2U5DbwymU96LHqFW3od29-ODJSjQ2xCNA1neSb_DKW5YGS-NH3ykGE0Flc9TN-e60QiAFHCPKnUHG6LH6F79MvGMbunT9-V8wzymwyU4CshgJuEk5mijfV-fnBAIfXEgwjjAC4ZSvWPyZEP8YaE2zo-18gaw83xllSQwPpSS_DFj_B614Wsz1Vfjv3iBCtkJ3Gh2L_WsDpwA-IGNYFo0ib3XuEwe4KX0dLW3Nk1s__ioOt7stJSq0A3So_FFwfuaEKIAzKnqXFk_W7_hIsSm7oRlQuYD0Q40-beeCljdimTCu612qcLIZ8zevygLFhjeJBoY3XJKU1mTl2xrqeh9Zw3fns1pMFPAf5-P18KinU8lE1gGGXv6TQW7DA0fr2bjTS0XJLo3REiPute4yJZjMF-37iHdwv1lcAcpREGyT3z8UWYF-MBfPMoFLxv-dBARGAM9BSfDFBEDhjzPR5DVN7EC_LNRAhFIYHqHcUpEaGYQ2oOB5enNZTfi9gTDS1rXgR7wtFyGAH9OX5JGiZVtWtqDlvXFDgJ_lHpCxlFsmBVqKKtkn6kJyBjfrA3C-Pk4EHHnrKTi5sw-gD-AKbQYcBw3gD44poGAqHkBhykjYylqc36NZplerelJOPqK4ejhcLY7JikbtpJJM9HL9eba1VHi7hmY0IFjHI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "test2",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "test@gmail.co",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "confirm_password",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "phone_no",
+									"value": "9898765432",
+									"type": "text"
+								},
+								{
+									"key": "verification_code",
+									"value": "9580",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}user/register",
+							"host": [
+								"{{url}}user"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "registerVerificationCode",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNTM0MWQ5NjRhNmVlNmYyMDVkMzg2MDhiZDUyNTljZDgwNTU1ZDYzNTNhODA0ZTRkNDNlYTgwNzFkYThkYmMzYWFmN2Y4NmQ2YWY5MDQ2ZDciLCJpYXQiOjE2Mjk4NzY2MjkuMzc2MTkyLCJuYmYiOjE2Mjk4NzY2MjkuMzc2MTk4LCJleHAiOjE2NjE0MTI2MjkuMzY2NTIsInN1YiI6IjIiLCJzY29wZXMiOltdfQ.YfuPda0VK2U5DbwymU96LHqFW3od29-ODJSjQ2xCNA1neSb_DKW5YGS-NH3ykGE0Flc9TN-e60QiAFHCPKnUHG6LH6F79MvGMbunT9-V8wzymwyU4CshgJuEk5mijfV-fnBAIfXEgwjjAC4ZSvWPyZEP8YaE2zo-18gaw83xllSQwPpSS_DFj_B614Wsz1Vfjv3iBCtkJ3Gh2L_WsDpwA-IGNYFo0ib3XuEwe4KX0dLW3Nk1s__ioOt7stJSq0A3So_FFwfuaEKIAzKnqXFk_W7_hIsSm7oRlQuYD0Q40-beeCljdimTCu612qcLIZ8zevygLFhjeJBoY3XJKU1mTl2xrqeh9Zw3fns1pMFPAf5-P18KinU8lE1gGGXv6TQW7DA0fr2bjTS0XJLo3REiPute4yJZjMF-37iHdwv1lcAcpREGyT3z8UWYF-MBfPMoFLxv-dBARGAM9BSfDFBEDhjzPR5DVN7EC_LNRAhFIYHqHcUpEaGYQ2oOB5enNZTfi9gTDS1rXgR7wtFyGAH9OX5JGiZVtWtqDlvXFDgJ_lHpCxlFsmBVqKKtkn6kJyBjfrA3C-Pk4EHHnrKTi5sw-gD-AKbQYcBw3gD44poGAqHkBhykjYylqc36NZplerelJOPqK4ejhcLY7JikbtpJJM9HL9eba1VHi7hmY0IFjHI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "suraj1",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "surajsuwal487@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "9876544",
+									"type": "text"
+								},
+								{
+									"key": "confirm_password",
+									"value": "987654",
+									"type": "text"
+								},
+								{
+									"key": "phone_no",
+									"value": "9860171834",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}user/register/send-verifycode",
+							"host": [
+								"{{url}}user"
+							],
+							"path": [
+								"register",
+								"send-verifycode"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "hotel_name",
+									"value": "RB Hotel",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "suraz suwal",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "test325@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "id",
+									"value": "7",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "phone_no",
+									"value": "9803829207",
+									"type": "text"
+								},
+								{
+									"key": "dateofbirth",
+									"value": "2054-11-16",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "koteshwor",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password1",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "confirmpassword",
+									"value": "password1",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}user/update",
+							"host": [
+								"{{url}}user"
+							],
+							"path": [
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sendVerificationCode",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "surajsuwal487@gmail.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}user/sendVerificationCode",
+							"host": [
+								"{{url}}user"
+							],
+							"path": [
+								"sendVerificationCode"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CheckVerificationCode",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "verification_code",
+									"value": "1601",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "rakeshbasnet086@gmail.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}user/checkVerificationCode?verification_code=1601&email=surajsuwal487@gmail.com",
+							"host": [
+								"{{url}}user"
+							],
+							"path": [
+								"checkVerificationCode"
+							],
+							"query": [
+								{
+									"key": "verification_code",
+									"value": "1601"
+								},
+								{
+									"key": "email",
+									"value": "surajsuwal487@gmail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "changePassword",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "surajsuwal487@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "newpassword",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "confirmpassword",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}user/forgotPassword/changepassword",
+							"host": [
+								"{{url}}user"
+							],
+							"path": [
+								"forgotPassword",
+								"changepassword"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "rakeshbasnet086@gmail.com",
+									"disabled": true
+								},
+								{
+									"key": "newpassword",
+									"value": "rbs@123",
+									"disabled": true
+								},
+								{
+									"key": "confirmpassword",
+									"value": "rbs@123",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUserProfileInformation",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}user/get/2",
+							"host": [
+								"{{url}}user"
+							],
+							"path": [
+								"get",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "getCategory",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}category/get",
+							"host": [
+								"{{url}}category"
+							],
+							"path": [
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSingleCategory",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}category/get/home-and-decor",
+							"host": [
+								"{{url}}category"
+							],
+							"path": [
+								"get",
+								"home-and-decor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getFeatureCategory",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}category/getFeature",
+							"host": [
+								"{{url}}category"
+							],
+							"path": [
+								"getFeature"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "getAllProduct",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}product/get",
+							"host": [
+								"{{url}}product"
+							],
+							"path": [
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getBySlug",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}product/get/tv",
+							"host": [
+								"{{url}}product"
+							],
+							"path": [
+								"get",
+								"tv"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "productsByCategory",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}product/getByCategory/electronics",
+							"host": [
+								"{{url}}product"
+							],
+							"path": [
+								"getByCategory",
+								"electronics"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSingleProduct",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}product/get/mobile",
+							"host": [
+								"{{url}}product"
+							],
+							"path": [
+								"get",
+								"mobile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getFeatureProduct",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}product/getFeature",
+							"host": [
+								"{{url}}product"
+							],
+							"path": [
+								"getFeature"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "filterProduct",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}product/filter?category_slug=electronics",
+							"host": [
+								"{{url}}product"
+							],
+							"path": [
+								"filter"
+							],
+							"query": [
+								{
+									"key": "category_id",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "price_filter",
+									"value": "high_to_low",
+									"disabled": true
+								},
+								{
+									"key": "sort_filter",
+									"value": "oldest",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "mobile",
+									"disabled": true
+								},
+								{
+									"key": "min_price",
+									"value": "20000",
+									"disabled": true
+								},
+								{
+									"key": "max_price",
+									"value": "50000",
+									"disabled": true
+								},
+								{
+									"key": "category_slug",
+									"value": "electronics"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSimilarProducts",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}product/getSimilarProducts/gas",
+							"host": [
+								"{{url}}product"
+							],
+							"path": [
+								"getSimilarProducts",
+								"gas"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Dynamic Pages",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Choose",
+			"item": [
+				{
+					"name": "GetALLChoose",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{url}}choose/get",
+							"host": [
+								"{{url}}choose"
+							],
+							"path": [
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSingleChoose",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}choose/get/design",
+							"host": [
+								"{{url}}choose"
+							],
+							"path": [
+								"get",
+								"design"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "About Us",
+			"item": [
+				{
+					"name": "getAboutUs",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}about-page/get/",
+							"host": [
+								"{{url}}about-page"
+							],
+							"path": [
+								"get",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Contact Us",
+			"item": [
+				{
+					"name": "getContact",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}contact-page/get",
+							"host": [
+								"{{url}}contact-page"
+							],
+							"path": [
+								"get"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Enquiry",
+			"item": [
+				{
+					"name": "getAllEnquiry",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}enquiry/get",
+							"host": [
+								"{{url}}enquiry"
+							],
+							"path": [
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "storeEnquiry",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "surajsuwal487@gmail.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}enquiry/store",
+							"host": [
+								"{{url}}enquiry"
+							],
+							"path": [
+								"store"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Terms And Condition",
+			"item": [
+				{
+					"name": "getTermsAndCondition",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}toc-page/get",
+							"host": [
+								"{{url}}toc-page"
+							],
+							"path": [
+								"get"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Wishlist",
+			"item": [
+				{
+					"name": "StoreWishlist",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "product_id",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}wishlist/store",
+							"host": [
+								"{{url}}wishlist"
+							],
+							"path": [
+								"store"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getWishlist",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}wishlist/get",
+							"host": [
+								"{{url}}wishlist"
+							],
+							"path": [
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "removeWishlistProduct",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}wishlist/remove/3",
+							"host": [
+								"{{url}}wishlist"
+							],
+							"path": [
+								"remove",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ContactMessage",
+			"item": [
+				{
+					"name": "storeContactMessage",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "test2 test2",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "test2@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "message",
+									"value": "This is contact message of test2.",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}contactMessage/store",
+							"host": [
+								"{{url}}contactMessage"
+							],
+							"path": [
+								"store"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllContactMessage",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}contactMessage/get",
+							"host": [
+								"{{url}}contactMessage"
+							],
+							"path": [
+								"get"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "placeOrder",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\" : 2,\r\n    \"name\" : \"anu\",\r\n    \"email\" : \"anu@gmail.com\",\r\n    \"phone\" : \"9812345677\",\r\n    \"address\" : \"Bhakatapur\",\r\n    \"postal_code\" : \"445577\",\r\n    \"payment_method\" : \"ime\",\r\n    \"total_amount\" : 1000,\r\n    \"items\" : [\r\n        {\r\n            \"order_id\" : 4,\r\n            \"product_id\" : 2,\r\n            \"qty\" : 2,\r\n            \"price\" : 400\r\n        },\r\n        {\r\n            \"order_id\" : 4,\r\n            \"product_id\" : 3,\r\n            \"qty\" : 2,\r\n            \"price\" : 300\r\n        },\r\n        {\r\n            \"order_id\" : 4,\r\n            \"product_id\" : 5,\r\n            \"qty\" : 2,\r\n            \"price\" : 400\r\n        }\r\n    ]\r\n\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}order/placeorder",
+							"host": [
+								"{{url}}order"
+							],
+							"path": [
+								"placeorder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOrder",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}order/getorder/1",
+							"host": [
+								"{{url}}order"
+							],
+							"path": [
+								"getorder",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOrderList",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}order/getOrderList/1",
+							"host": [
+								"{{url}}order"
+							],
+							"path": [
+								"getOrderList",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deliverdOrders",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}order/delivered-orders",
+							"host": [
+								"{{url}}order"
+							],
+							"path": [
+								"delivered-orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "canceledOrders",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}order/canceled-orders",
+							"host": [
+								"{{url}}order"
+							],
+							"path": [
+								"canceled-orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Orders-history",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}order/orders-history/1",
+							"host": [
+								"{{url}}order"
+							],
+							"path": [
+								"orders-history",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cancelOrder",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}order/cancelorder/1",
+							"host": [
+								"{{url}}order"
+							],
+							"path": [
+								"cancelorder",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "getCart",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}cart/get/1",
+							"host": [
+								"{{url}}cart"
+							],
+							"path": [
+								"get",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "storeCart",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept-encoding": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "product_id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "fridge",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "8000",
+									"type": "text"
+								},
+								{
+									"key": "size",
+									"value": "16",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"value": "test.jpg",
+									"type": "text"
+								},
+								{
+									"key": "ingredeints",
+									"value": "abc",
+									"type": "text"
+								},
+								{
+									"key": "qty",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "product_link",
+									"value": "https://www.pexels.com/photo/green-trees-on-mountain-covered-with-clouds-10334838/",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}cart/store",
+							"host": [
+								"{{url}}cart"
+							],
+							"path": [
+								"store"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "removeCartProduct",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}cart/remove/4",
+							"host": [
+								"{{url}}cart"
+							],
+							"path": [
+								"remove",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Carousel",
+			"item": [
+				{
+					"name": "getAllCarousel",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}carousel/get",
+							"host": [
+								"{{url}}carousel"
+							],
+							"path": [
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSingleCarousel",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}carousel/get/a",
+							"host": [
+								"{{url}}carousel"
+							],
+							"path": [
+								"get",
+								"a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Banner",
+			"item": [
+				{
+					"name": "getAllBanner",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}banner/get",
+							"host": [
+								"{{url}}banner"
+							],
+							"path": [
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSingleBanner",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}banner/get/1",
+							"host": [
+								"{{url}}banner"
+							],
+							"path": [
+								"get",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Refund",
+			"item": [
+				{
+					"name": "getRefund",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}refund/get",
+							"host": [
+								"{{url}}refund"
+							],
+							"path": [
+								"get"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "privacy",
+			"item": [
+				{
+					"name": "getPrivacyPolicies",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}privacy/get",
+							"host": [
+								"{{url}}privacy"
+							],
+							"path": [
+								"get"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Advertisment",
+			"item": [
+				{
+					"name": "getAllAdvertisment",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}advertisment/get",
+							"host": [
+								"{{url}}advertisment"
+							],
+							"path": [
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSingleAdvertisment",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}advertisment/get/brand1",
+							"host": [
+								"{{url}}advertisment"
+							],
+							"path": [
+								"get",
+								"brand1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

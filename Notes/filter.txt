@@ -1,0 +1,203 @@
+    {
+        if (isset($request->category_id) && isset($request->price_filter) && isset($request->sort_filter) && isset($request->name)
+        ) {
+            if ($request->price_filter == 'high_to_low' && $request->sort_filter == "newest") {
+                $products = Product::where('name', 'LIKE', "%{$request->name}%")->where('category_id', $request->category_id)->orderBy('price', 'DESC')->orderBy('created_at', 'DESC')->get();
+                foreach ($products as $product) {
+                    if(isset($product->images)){
+                    foreach ($product->images as $img) {
+                        $img->image = url('/storage/products/' . $img->image);
+                    }
+                }
+                }
+                $data = ['products' => $products];
+                return $this->successData("Success", $data,200);
+            } elseif ($request->price_filter == 'high_to_low' && $request->sort_filter == "oldest") {
+                $products = Product::where('name', 'LIKE', "%{$request->name}%")->where('category_id', $request->category_id)->orderBy('price', 'DESC')->orderBy('created_at', 'ASC')->get();
+                foreach ($products as $product) {
+                    if(isset($product->images)){
+                    foreach ($product->images as $img) {
+                        $img->image = url('/storage/products/' . $img->image);
+                    }
+                }
+                }
+                $data = ['products' => $products];
+                return $this->successData("Success", $data,200);
+            } elseif ($request->price_filter == 'low_to_high' && $request->sort_filter == "newest") {
+                $products = Product::where('name', 'LIKE', "%{$request->name}%")->where('category_id', $request->category_id)->orderBy('price', 'ASC')->orderBy('created_at', 'DESC')->get();
+                foreach ($products as $product) {
+                    if(isset($product->images)){
+                    foreach ($product->images as $img) {
+                        $img->image = url('/storage/products/' . $img->image);
+                    }
+                }
+                }
+                $data = ['products' => $products];
+                return $this->successData("Success", $data,200);
+            } elseif ($request->price_filter == 'low_to_high' && $request->sort_filter == "oldest") {
+                $products = Product::where('name', 'LIKE', "%{$request->name}%")->where('category_id', $request->category_id)->orderBy('price', 'ASC')->orderBy('created_at', 'ASC')->get();
+                foreach ($products as $product) {
+                    if(isset($product->images)){
+                    foreach ($product->images as $img) {
+                        $img->image = url('/storage/products/' . $img->image);
+                    }
+                }
+                }
+                $data = ['products' => $products];
+                return $this->successData("Success", $data,200);
+            }
+        } elseif (isset($request->category_id) && isset($request->price_filter)) {
+            if ($request->price_filter == 'high_to_low') {
+                $products = Product::where('name', 'LIKE', "%{$request->name}%")->where('category_id', $request->category_id)->orderBy('price', 'DESC')->get();
+                foreach ($products as $product) {
+                    if(isset($product->images)){
+                    foreach ($product->images as $img) {
+                        $img->image = url('/storage/products/' . $img->image);
+                    }
+                }
+                }
+                $data = ['products' => $products];
+                return $this->successData("Success", $data,200);
+            } elseif ($request->price_filter == 'low_to_high') {
+                $products = Product::where('name', 'LIKE', "%{$request->name}%")->where('category_id', $request->category_id)->orderBy('price', 'ASC')->get();
+                foreach ($products as $product) {
+                    if(isset($product->images)){
+                    foreach ($product->images as $img) {
+                        $img->image = url('/storage/products/' . $img->image);
+                    }
+                }
+                }
+                $data = ['products' => $products];
+                return $this->successData("Success", $data,200);
+            }
+        } elseif (isset($request->category_id) && isset($request->sort_filter)) {
+            if ($request->sort_filter == "newest") {
+                $products = Product::where('name', 'LIKE', "%{$request->name}%")->where('category_id', $request->category_id)->orderBy('created_at', 'DESC')->get();
+                foreach ($products as $product) {
+                    if(isset($product->images)){
+                    foreach ($product->images as $img) {
+                        $img->image = url('/storage/products/' . $img->image);
+                    }
+                }
+                }
+                $data = ['products' => $products];
+                return $this->successData("Success", $data,200);
+            } elseif ($request->sort_filter == "oldest") {
+                $products = Product::where('name', 'LIKE', "%{$request->name}%")->where('category_id', $request->category_id)->orderBy('created_at', 'ASC')->get();
+                foreach ($products as $product) {
+                    if(isset($product->images)){
+                    foreach ($product->images as $img) {
+                        $img->image = url('/storage/products/' . $img->image);
+                    }
+                }
+                }
+                $data = ['products' => $products];
+                return $this->successData("Success", $data,200);
+            }
+        } elseif (isset($request->price_filter) && isset($request->sort_filter)) {
+            if ($request->price_filter == 'high_to_low' && $request->sort_filter == "newest") {
+                $products = Product::where('name', 'LIKE', "%{$request->name}%")->orderBy('price', 'DESC')->orderBy('created_at', 'DESC')->get();
+                foreach ($products as $product) {
+                    if(isset($product->images)){
+                    foreach ($product->images as $img) {
+                        $img->image = url('/storage/products/' . $img->image);
+                    }
+                }
+                }
+                $data = ['products' => $products];
+                return $this->successData("Success", $data,200);
+            } elseif ($request->price_filter == 'high_to_low' && $request->sort_filter == "oldest") {
+                $products = Product::where('name', 'LIKE', "%{$request->name}%")->orderBy('price', 'DESC')->orderBy('created_at', 'ASC')->get();
+                foreach ($products as $product) {
+                    if(isset($product->images)){
+                    foreach ($product->images as $img) {
+                        $img->image = url('/storage/products/' . $img->image);
+                    }
+                }
+                }
+                $data = ['products' => $products];
+                return $this->successData("Success", $data,200);
+            } elseif ($request->price_filter == 'low_to_high' && $request->sort_filter == "newest") {
+                $products = Product::where('name', 'LIKE', "%{$request->name}%")->orderBy('price', 'ASC')->orderBy('created_at', 'DESC')->get();
+                foreach ($products as $product) {
+                    if(isset($product->images)){
+                    foreach ($product->images as $img) {
+                        $img->image = url('/storage/products/' . $img->image);
+                    }
+                }
+                }
+                $data = ['products' => $products];
+                return $this->successData("Success", $data,200);
+            } elseif ($request->price_filter == 'low_to_high' && $request->sort_filter == "oldest") {
+                $products = Product::where('name', 'LIKE', "%{$request->name}%")->orderBy('price', 'ASC')->orderBy('created_at', 'ASC')->get();
+                foreach ($products as $product) {
+                    if(isset($product->images)){
+                    foreach ($product->images as $img) {
+                        $img->image = url('/storage/products/' . $img->image);
+                    }
+                }
+                }
+                $data = ['products' => $products];
+                return $this->successData("Success", $data,200);
+            }
+        } elseif (isset($request->category_id)) {
+            $products = Product::where('name', 'LIKE', "%{$request->name}%")->where('category_id', $request->category_id)->get();
+            foreach ($products as $product) {
+                if(isset($product->images)){
+                foreach ($product->images as $img) {
+                    $img->image = url('/storage/products/' . $img->image);
+                }
+            }
+            }
+            $data = ['products' => $products];
+            return $this->successData("Success", $data,200);
+        } elseif (isset($request->price_filter)) {
+            if ($request->price_filter == 'high_to_low') {
+                $products = Product::where('name', 'LIKE', "%{$request->name}%")->orderBy('price', 'DESC')->get();
+                foreach ($products as $product) {
+                    if(isset($product->images)){
+                    foreach ($product->images as $img) {
+                        $img->image = url('/storage/products/' . $img->image);
+                    }
+                }
+                }
+                $data = ['products' => $products];
+                return $this->successData("Success", $data,200);
+            } elseif ($request->price_filter == 'low_to_high') {
+                $products = Product::where('name', 'LIKE', "%{$request->name}%")->orderBy('price', 'ASC')->get();
+                foreach ($products as $product) {
+                    if(isset($product->images)){
+                    foreach ($product->images as $img) {
+                        $img->image = url('/storage/products/' . $img->image);
+                    }
+                }
+                }
+                $data = ['products' => $products];
+                return $this->successData("Success", $data,200);
+            }
+        } elseif (isset($request->sort_filter)) {
+            if ($request->sort_filter == "newest") {
+                $products = Product::orderBy('created_at', 'DESC')->get();
+                foreach ($products as $product) {
+                    if(isset($product->images)){
+                    foreach ($product->images as $img) {
+                        $img->image = url('/storage/products/' . $img->image);
+                    }
+                }
+                }
+                $data = ['products' => $products];
+                return $this->successData("Success", $data,200);
+            } elseif ($request->sort_filter == "oldest") {
+                $products = Product::orderBy('created_at', 'ASC')->get();
+                foreach ($products as $product) {
+                    if(isset($product->images)){
+                    foreach ($product->images as $img) {
+                        $img->image = url('/storage/products/' . $img->image);
+                    }
+                }
+                }
+                $data = ['products' => $products];
+                return $this->successData("Success", $data,200);
+            }
+        }
+    }

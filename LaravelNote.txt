@@ -124,3 +124,6 @@ map()= going through each of the intem and transform it into something else.
 	dd($exception->getMessage());
 	dd(get_class($exception));
 	}
+
+#Dependancy Injection
+	-Some function or classed depends upon other functions and classes. If we are injectin those dependency in classes it is said to be dependancy injection.

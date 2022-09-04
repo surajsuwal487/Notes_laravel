@@ -1,0 +1,1657 @@
+{
+	"info": {
+		"_postman_id": "e00e18a0-dafe-47bd-abe4-7ebc14b02b7b",
+		"name": "HR-Portal",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16527445"
+	},
+	"item": [
+		{
+			"name": "USer and Roles",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{my_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "user1@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "user1@123",
+									"type": "text"
+								},
+								{
+									"key": "confirm_password",
+									"value": "user1@123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}user/register",
+							"host": [
+								"{{url}}user"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "send verification code",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "anita12joc@gmail.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}user/sendVerificationCode",
+							"host": [
+								"{{url}}user"
+							],
+							"path": [
+								"sendVerificationCode"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "check verification code",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "anita12joc@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "verification_code",
+									"value": "164059",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}user/checkVerificationCode",
+							"host": [
+								"{{url}}user"
+							],
+							"path": [
+								"checkVerificationCode"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change forget password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "anita12joc@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "newpassword",
+									"value": "anu123",
+									"type": "text"
+								},
+								{
+									"key": "confirmpassword",
+									"value": "anu123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}user/changeForgetPassword",
+							"host": [
+								"{{url}}user"
+							],
+							"path": [
+								"changeForgetPassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUserDetails",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}user/get/1",
+							"host": [
+								"{{url}}user"
+							],
+							"path": [
+								"get",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUser",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{my_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "suraj",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "suraj@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "phone_no",
+									"value": "9803829209",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "koteshwor",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "male",
+									"type": "text"
+								},
+								{
+									"key": "dob",
+									"value": "2054/11/16",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Suwal/Downloads/pexels-zhanqun-cai-3998488.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}user/update",
+							"host": [
+								"{{url}}user"
+							],
+							"path": [
+								"update"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "logout",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzQ4YzY4Y2Q3OTljZWJkMGVhOGJjNTk0MmNkNzJiMDJiYzg5YzlkY2FlOTZmYWVhOTE0NDkwYzM1ZDZhYWQyNmFlMmFhZWM2OTY2MTI4NDkiLCJpYXQiOjE2NTUyODU3ODYuNDY1MTA3LCJuYmYiOjE2NTUyODU3ODYuNDY1MTEyLCJleHAiOjE2ODY4MjE3ODYuNDUwNjA4LCJzdWIiOiI0Iiwic2NvcGVzIjpbXX0.aQghgF8JCVuQiz0b-51li5ZtgDle_2I9soLnvQ4qZakm6pxnFqRz7rx3O_xuL3fvKllPDze-L2E5HJbZQMpfMMsM48dd3nTnGkzznY2WFqekZScchuhzvAIWaXD3kpoz7-A1XYFUlH8oOcmI_NUdVLsSIxV5lBuEKzKD4guKFpxZq_62vgOcAefQX-rfZpiTsQJ34CRpPIS9GKewrfITcjUzUU8FBOCrxmQp4ZWB55Oyn88uFk4z5jsrKSqdMQMCmN2gKoHpjbRImdwlJ3-xTQlfNrStBrW2EDHopB_2aWLXx-6GmZDRfMEtDDIVioZ9dJ_P42d0jiQfV87Y7fiqTkKjbDN9bPSJBBSfpashNfwx-54NSQjg8aTj-8FY9_oPghmsjY-af5dDFSbPI6DjxgjfqkrJYD0xMrUF4K5CmHIkCtZkb_KQcr-rsgn_kbQO98e9iGN1IBha37dr7cgY_WVu37LdjKcp2QDrKSOzz5qAl1VAox46OC-ez-JjC6ETahn3s_5vqzoAERqWoSS71Ya23SuvLBymESsTQMmWqfDNV-ygN5yCPydTjnUiA0kSNErH5Dl1Kw6v2NZ2ystLnwq33z1djj84GKJQfRp37SAlgRBataFE4h_N82ad5rU0A6uk7PaSmtrgPm-48v5VranqoAzVtf3rBsPBL3JJqh0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}user/logout",
+							"host": [
+								"{{url}}user"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "hrportal@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "hrportal123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}user/login",
+							"host": [
+								"{{url}}user"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Applicant",
+			"item": [
+				{
+					"name": "Store Applicant",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "job_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "applicant_name",
+									"value": "suraz",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "applicant_contact_no",
+									"value": "9808104055",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "applicant_email",
+									"value": "suraz@gmail.xom",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "applicant_message",
+									"value": "I want to apply for this job.",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}applicant/store-applicants",
+							"host": [
+								"{{url}}applicant"
+							],
+							"path": [
+								"store-applicants"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get  applicants by job id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{my_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}applicant/get-applicants-byjobid/1",
+							"host": [
+								"{{url}}applicant"
+							],
+							"path": [
+								"get-applicants-byjobid",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getApplications",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}applicant/get-applications",
+							"host": [
+								"{{url}}applicant"
+							],
+							"path": [
+								"get-applications"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Article",
+			"item": [
+				{
+					"name": "get all news and event",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}news_and_event",
+							"host": [
+								"{{url}}news_and_event"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get single news and event",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}news_and_event/anita",
+							"host": [
+								"{{url}}news_and_event"
+							],
+							"path": [
+								"anita"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all blogs",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}get-blogs",
+							"host": [
+								"{{url}}get-blogs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get single blog",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}getSingle-blog/ddd-62be9796bf0f2",
+							"host": [
+								"{{url}}getSingle-blog"
+							],
+							"path": [
+								"ddd-62be9796bf0f2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getLatestBlog",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}getlatest-blog",
+							"host": [
+								"{{url}}getlatest-blog"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "searchBlog",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}search-blog?searchKey=a",
+							"host": [
+								"{{url}}search-blog"
+							],
+							"query": [
+								{
+									"key": "searchKey",
+									"value": "a"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Information",
+			"item": [
+				{
+					"name": "about us get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}get-about-us",
+							"host": [
+								"{{url}}get-about-us"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all dynamics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}get-dynamics-pages",
+							"host": [
+								"{{url}}get-dynamics-pages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get detail dynamic",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}get-dynamic-page-detail/ddd-62a9ba3a8da78",
+							"host": [
+								"{{url}}get-dynamic-page-detail"
+							],
+							"path": [
+								"ddd-62a9ba3a8da78"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Policy",
+			"item": [
+				{
+					"name": "get terms and condition",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}get-term-condition",
+							"host": [
+								"{{url}}get-term-condition"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get disclaimer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}get-disclaimer",
+							"host": [
+								"{{url}}get-disclaimer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get privacy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}get-privacy",
+							"host": [
+								"{{url}}get-privacy"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Setting",
+			"item": [
+				{
+					"name": "get setting",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}get-setting",
+							"host": [
+								"{{url}}get-setting"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cv",
+			"item": [
+				{
+					"name": "store BasicInfo",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNjI0Y2QzMGUxMzRmMmY0ZTM3ZTIxNDkwODcyZjRiYTVjZmMwYWY0NmFhYTJiNzNkZDkyMDUwNTMyMDlmZTMzNjZmMDgxYmE1MWIyNzAyNmIiLCJpYXQiOjE2NTY1NjM2ODcuNjUwNTE3LCJuYmYiOjE2NTY1NjM2ODcuNjUwNTE5LCJleHAiOjE2ODgwOTk2ODcuNDY0NTAxLCJzdWIiOiI0Iiwic2NvcGVzIjpbXX0.Es_MwgCo4Z3zKzCot7cNJ8de39iZbtoz1Vs11jKkRP_zXweyLILmZ6eIFb28UyjfoHmjOmFiSw_zrP2zsNftlmJMmy7YK1NmX6Yh0DXvYgqt-e_0RXK9FIwHhyuZZW-kXp-lV418ZgSoyDDiwLYGlSzeVqrsut-LSUetZlxmeM1zbSZrAiWM0VFhoCwsBTfs7emMVRnrfSTeO_B7BdBcS8puecOuD54rx5v9E6hJus3KgevQqTZbZmmHJbdPJofuKsxsM_qxZoL-kqI_hxNBvK55udOR-Y-dg7CRmPVhY7QKfNiz6MTnIQ8dCUmv_PldxfnhfJ5DMy8Lt9nmwRiK0tcB_pLCkkA57oOw1LqZkTjXz5U329sW0S_kwtrnoFWJiJeoGnnICI4Eei8yteuXuvWCvUQpuWH3fOVxVNV9drg0aELluQyl8776rqFCFrWaOGGymshzcerBMxZaBMbA3onuk70KNOYmKVeL6UjcCdWBJyiqr7-91RO5yqiJreG8wfRwfj72KVXzk0ZWUGpU_5J9jlxP8STMYMt2qBbk6XOwykDW0FGhbSIu3CLh_CRiYm-QCaG3zY3fGRFO8qx9VR4f94k6AKTvCMyoUz5T5GKPURZoIo4NpCE5vOejYNsMSjR04X3Lx4GhtAbV0UJo4hrMpn-u3IHXeQxaUlxCSMM\"",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n    \"id\":10,\r\n    \"name\": \"user1 user1\",\r\n    \"email\": \"user1@gmail.com\",\r\n    \"phone_no\": \"9879878835\",\r\n    \"address\": \"koteshwor\",\r\n    \"experiences\": [\r\n        {\r\n            \"company_name\": \"creatu\",\r\n            \"position\": \"manager\",\r\n            \"jobtype\": \"parttime\",\r\n            \"job_location\":\"ktm\",\r\n            \"job_start_date\": \"2020-03-03\",\r\n            \"job_end_date\": \"2022-06-04\"\r\n        }\r\n    ],\r\n    \"education_info\": [\r\n        {\r\n        \"institution_name\" :\"ncit\",\r\n        \"course_name\" :\"bim\",\r\n        \"course_start_date\" :\"2017-03-13\",\r\n        \"course_graduation_date\" :\"2022-03-03\",\r\n        \"gpa\" :\"3.5\"\r\n        }\r\n    ],\r\n    \"skills\":\r\n       [\r\n           {\r\n               \"skill_name\":\"Laravel Development\",\r\n               \"institution_name\": \"serverTech\",\r\n               \"skill_start_date\": \"2021/5/7\",\r\n               \"skill_end_date\": \"2021/9/7\"\r\n\r\n            }\r\n       ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}basic-info/store",
+							"host": [
+								"{{url}}basic-info"
+							],
+							"path": [
+								"store"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get basic Info(Cv)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}basic-info/get/9",
+							"host": [
+								"{{url}}basic-info"
+							],
+							"path": [
+								"get",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update BAsicinfo(cv)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":4,\r\n    \"name\": \"Anita\",\r\n    \"phone_no\": \"9879878878\",\r\n    \"email\": \"anita@gmail.com\",\r\n    \"address\": \"suklaphanta\",\r\n    \"experiences\": [\r\n        {\r\n            \"id\":1,\r\n            \"company_name\": \"dddd\",\r\n            \"position\": \"manager\",\r\n            \"jobtype\": \"parttime\",\r\n            \"job_location\":\"ktm\",\r\n            \"job_start_date\": \"2020-03-03\",\r\n            \"job_end_date\": \"2022-03-04\"\r\n        },\r\n        {\r\n            \"company_name\": \"shara\",\r\n            \"position\": \"manager\",\r\n            \"jobtype\": \"parttime\",\r\n            \"job_location\":\"ktm\",\r\n            \"job_start_date\": \"2020-03-03\",\r\n            \"job_end_date\": \"2022-03-04\"\r\n        }\r\n    ],\r\n       \"education_info\": [\r\n        {\r\n            \"id\":1,\r\n        \"institution_name\" :\"Morning Glory\",\r\n        \"course_name\" :\"math\",\r\n        \"course_start_date\" :\"2019-03-13\",\r\n        \"course_graduation_date\" :\"2022-03-03\",\r\n        \"gpa\" :\"3.14\"\r\n        }\r\n    ],\r\n    \"skills\":\r\n       [\r\n           {   \"id\":1,\r\n               \"skill_name\":\"kk\"\r\n            },\r\n             {   \r\n               \"skill_name\":\"Aeeeek\"\r\n            }\r\n       ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}basic-info/update",
+							"host": [
+								"{{url}}basic-info"
+							],
+							"path": [
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update profile image",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{my_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Suwal/Downloads/pexels-neo-2653362.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}basic-info/update-profile-image",
+							"host": [
+								"{{url}}basic-info"
+							],
+							"path": [
+								"update-profile-image"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update experience image",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "exp_image",
+									"type": "file",
+									"src": "/C:/Users/Hp/Pictures/Screenshots/Screenshot (33).png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/basic-info/update-experience-image/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"basic-info",
+								"update-experience-image",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Job",
+			"item": [
+				{
+					"name": "job filter",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{my_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "experience_level",
+									"value": "2",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "job_type",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "dateStarted",
+									"value": "2022-06-30",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "location",
+									"value": "jhalari",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}job/job-filter",
+							"host": [
+								"{{url}}job"
+							],
+							"path": [
+								"job-filter"
+							],
+							"query": [
+								{
+									"key": "location",
+									"value": "jha",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all jobs",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{my_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}job/get",
+							"host": [
+								"{{url}}job"
+							],
+							"path": [
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "job detail",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}job/get/title",
+							"host": [
+								"{{url}}job"
+							],
+							"path": [
+								"get",
+								"title"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "latest jobs",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}job/get-currentweek",
+							"host": [
+								"{{url}}job"
+							],
+							"path": [
+								"get-currentweek"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "featured jobs",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/job/get-featured",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"job",
+								"get-featured"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Attributes",
+			"item": [
+				{
+					"name": "get all Jobtype",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}attributes/get-jobtypes",
+							"host": [
+								"{{url}}attributes"
+							],
+							"path": [
+								"get-jobtypes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all experiences",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}attributes/get-experience",
+							"host": [
+								"{{url}}attributes"
+							],
+							"path": [
+								"get-experience"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all education level",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}attributes/get-educationlevel",
+							"host": [
+								"{{url}}attributes"
+							],
+							"path": [
+								"get-educationlevel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all company type",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}attributes/get-companytypes",
+							"host": [
+								"{{url}}attributes"
+							],
+							"path": [
+								"get-companytypes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-all-attributes",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}attributes/get-companytypes",
+							"host": [
+								"{{url}}attributes"
+							],
+							"path": [
+								"get-companytypes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Company",
+			"item": [
+				{
+					"name": "company detail",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{my_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}company/get/",
+							"host": [
+								"{{url}}company"
+							],
+							"path": [
+								"get",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "filterCompaies",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}company/filter?company_name=a",
+							"host": [
+								"{{url}}company"
+							],
+							"path": [
+								"filter"
+							],
+							"query": [
+								{
+									"key": "company_name",
+									"value": "a"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "storeReview",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{my_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "company_id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "user_id",
+									"value": "9",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "rating",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "comment",
+									"value": "good company",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}company/storeReview",
+							"host": [
+								"{{url}}company"
+							],
+							"path": [
+								"storeReview"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateReview",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{my_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "comment",
+									"value": "good compnay",
+									"type": "text"
+								},
+								{
+									"key": "rating",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "id",
+									"value": "6",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}company/updateReview",
+							"host": [
+								"{{url}}company"
+							],
+							"path": [
+								"updateReview"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pastJobVacancyHistory",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{my_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}company/pastJobVacancyHistory",
+							"host": [
+								"{{url}}company"
+							],
+							"path": [
+								"pastJobVacancyHistory"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "my_token",
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNjE3ODgxM2YxZjRkZDI1M2QxNDFhMWZmYTVhYWU2YTIzMTEzNGRmOGU2MjcxZDYyNzJiZThkNGRkMDA3NjI1YWU3OGEyNTQ0Njk1MmIxYjkiLCJpYXQiOjE2NTg0Nzc2MjAuNDc3NDk0LCJuYmYiOjE2NTg0Nzc2MjAuNDc3NDk2LCJleHAiOjE2OTAwMTM2MjAuNDQ5MjgyLCJzdWIiOiIzIiwic2NvcGVzIjpbXX0.s9SKEfWAvBkhQ2e4x3TiujpHjpbs-lO_oWjmY0bDNybaKwbPQL_EFCmqZPEXZuumqR3RVSUI-0DC_9ee_PPGRXPvWwq9j64olJi9SrNPKLq5bbvaYgjZ8sJqVvIA6bzSSGrcKDyVeTQWGKX4GYRfyDwCAYvLmEPKUDts-P4DCncrnyN73Gd8gxeKiIEv5wyj5aYF9_Eujpy_Kx_7Zvkez4z4fDUo-62YYKlcyaG2lNJjacbeIbcZqcT4TkO1AaAArF5Qzd1pHorzP7NmJUxa2VRQmreH32udWd1tbbcI5keokip5TtizZggu5XScd7zXkVvJd7X-I3WD5fWQRh9jTpYNoYeG-Hy5RtZmsr_-i7zYe-aWEM237dmmrO1HAUfdW8sLK9r9EFUhI6rO8uYR7B-TrsYK-hmG9mI7wubQ2nnSuIjuIhKp2wdEyqXSBg-Ja9enJ-Xh-OjaywEM_XsEOP1YpUSIyS297sa2GJgDkfCqW7FwG9dNgXyoGA9P-N6dCA7ebVPSNCFpL3ub4itlAJls8ac5aVLfS_8iJNzraaieinwwCW_ItpZ-UL_5ZkbwKXI92OFNIUKdgNKZSxhrTsNQaDTDPRugGH9h06TroonUZygg0QVuyInFzXQu4skz3-6KrFL3x3ant8BKV2Z9mcYx35caCEGCClsHVMWHX7c",
+			"type": "string"
+		}
+	]
+}

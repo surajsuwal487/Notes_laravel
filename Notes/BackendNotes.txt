@@ -1,0 +1,167 @@
+<?php
+
+namespace App\Http\Controllers\Api;
+
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+
+class ApiBaseController extends Controller
+{
+    public function successResponse($message, int $statusCode)
+    {
+        return response()->json(['status' => true,'message' => $message,'status_code' => $statusCode]);
+    }
+
+    public function successData($message, $data = [], int $statusCode)
+    {
+        return response()->json(['status' => true,'message' => $message,'status_code' => $statusCode, 'data' => $data]);
+    }
+
+    public function errorResponse($message, int $statusCode)
+    {
+        return response()->json(['status' => false,'message' => $message,'status_code' => $statusCode],$statusCode);
+    }
+
+    public function errorData($message, $data=[], int $statusCode)
+    {
+        return response()->json(['status' => false,'message' => $message,'status_code' => $statusCode,'data' => $data],$statusCode);
+    }
+
+    public function productData($message, $data = [], int $statusCode)
+    {
+        return response()->json(['status' => true,'message' => $message,'status_code' => $statusCode, 'products' =>$data]);
+    }
+
+}
+
+
+return $this->subject('Mail from ItSolutionStuff.com')
+                    ->view('emails.myTestMail');
+
+
+File Repository:
+<?php
+
+namespace App\Repository;
+
+use File;
+class FileRepository
+{
+    public function saveFile($request,$name,$path)
+    {
+        if ($request->hasFile($name)) {
+            $this->createDirectory($path);
+            $file = $request[$name];
+            $filename = time() .rand(10000,99999). '.' . $file->getClientOriginalExtension();
+            $file->move($this->filePath, $filename);
+            return $filename;
+        }
+    }
+
+    public function createDirectory($path)
+    {
+        $paths = [
+            'file_path' =>"uploads/files/".$path."/",
+        ];
+        foreach ($paths as $path) {
+            if (!File::isDirectory($path)) {
+                File::makeDirectory($path, 0777, true, true);
+            }
+            $this->filePath = $paths['file_path'];
+        }
+    }
+
+    public function removeFile($file,$name,$path)
+    {
+        $paths = [
+            'file_path' =>"uploads/files/".$path."/",
+        ];
+
+        foreach ($paths as $path) {
+            if (file_exists($path . $file[$name])) {
+                unlink($path . $file[$name]);
+            }
+        }
+
+    }
+
+}
+
+
+public function passwordReset(ForgotPasswordRequest $request)
+    {
+    
+        $token = Str::random(64);
+    
+          DB::table('password_resets')->insert(
+              ['email' => $request->email, 'token' => $token, 'created_at' => now()]
+          );
+    
+          Mail::send('mail.verify', ['token' => $token], function($message) use($request){
+              $message->to($request->email);
+              $message->subject('Reset Password Notification');
+          });
+    
+          return back()->with('message', 'We have e-mailed your password reset link!');
+    }
+
+
+mage Repository:
+
+<?php
+
+namespace App\Repository;
+
+use File;
+use Image;
+class ImageRepository
+{
+    public function saveImage($request,$name,$path)
+    {
+        if ($request->hasFile($name)) {
+            $this->createDirectory($path);
+            $file = $request[$name];
+            $image = Image::make($file);
+           $imagename = time().rand(100000,999999).'.' . $file->getClientOriginalExtension();
+            $image->save($this->imagePath . $imagename);
+            $image->resize(400, 400);
+            $image->save($this->thumbnailPath . $imagename);
+            return $imagename;
+        }
+    }
+
+    public function createDirectory($path)
+    {
+        $paths = [
+            'image_path' => "uploads/images/".$path."/",
+            'thumbnail_path' =>"uploads/images/".$path."/thumbnail/",
+        ];
+        foreach ($paths as $path) {
+            if (!File::isDirectory($path)) {
+                File::makeDirectory($path, 0777, true, true);
+            }
+            $this->imagePath = $paths['image_path'];
+            $this->thumbnailPath = $paths['thumbnail_path'];
+        }
+    }
+
+    public function removeImage($image,$name,$path)
+    {
+        $paths = [
+            'image_path' => "uploads/images/".$path."/",
+            'thumbnail_image_path' => "uploads/images/".$path."/thumbnail/",
+        ];
+
+        foreach ($paths as $path) {
+            if (file_exists($path . $image[$name])) {
+                unlink($path . $image[$name]);
+            }
+        }
+
+    }
+
+}
+
+
+->whereLike('name', $request->name)
+where('name', 'LIKE', "%{$request->name}%")

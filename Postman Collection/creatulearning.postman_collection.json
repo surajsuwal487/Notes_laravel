@@ -1,0 +1,836 @@
+{
+	"info": {
+		"_postman_id": "d2048c67-fac0-4908-bbc1-ddfd49a58a1e",
+		"name": "creatulearning",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20156969"
+	},
+	"item": [
+		{
+			"name": "blogs",
+			"item": [
+				{
+					"name": "getAllblogs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}api/v1/blog/get",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"v1",
+								"blog",
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSingleBlog",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}api/v1/blog/single/1",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"v1",
+								"blog",
+								"single",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "courses",
+			"item": [
+				{
+					"name": "getAllcourses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}api/v1/courses/get",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"v1",
+								"courses",
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "singleView",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}api/v1/courses/single/2",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"v1",
+								"courses",
+								"single",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "coursecategory",
+			"item": [
+				{
+					"name": "getallcoursecategory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}api/v1/course-category/get",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"v1",
+								"course-category",
+								"get"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "setting",
+			"item": [
+				{
+					"name": "getAllSettings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}api/v1/get-setting",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"v1",
+								"get-setting"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "partner",
+			"item": [
+				{
+					"name": "getAllPartners",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}api/v1/partners/get",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"v1",
+								"partners",
+								"get"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "service",
+			"item": [
+				{
+					"name": "getAllServices",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}api/v1/services/get",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"v1",
+								"services",
+								"get"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "banner",
+			"item": [
+				{
+					"name": "getAllBanner",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}api/v1/banner/get",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"v1",
+								"banner",
+								"get"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "infographic",
+			"item": [
+				{
+					"name": "getAllInfographic",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}api/v1/infographic/get",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"v1",
+								"infographic",
+								"get"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "enquiry",
+			"item": [
+				{
+					"name": "getAllEnquries",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}api/v1/enquiry/get",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"v1",
+								"enquiry",
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "storeEnquiry",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "\nBina",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "phoinex.adhikari777@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "number",
+									"value": "9818311552",
+									"type": "text"
+								},
+								{
+									"key": "question",
+									"value": "how to get you?",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}api/v1/enquiry/store?",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"v1",
+								"enquiry",
+								"store"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "WhyUs",
+			"item": [
+				{
+					"name": "getAllWhyus",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/whyus/get",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"whyus",
+								"get"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Instructor",
+			"item": [
+				{
+					"name": "getAllInstructor",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}api/v1/instructor/get",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"v1",
+								"instructor",
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "storeInstructor",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Bina",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "phoinex.adhikari777@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "number",
+									"value": "9818311552",
+									"type": "text"
+								},
+								{
+									"key": "portfolio",
+									"value": "your online portfolio link",
+									"type": "text"
+								},
+								{
+									"key": "about",
+									"value": "about you",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/anu/Downloads/PROJECT-FRONT.pdf"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}api/v1/instructor/store",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"v1",
+								"instructor",
+								"store"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Enroll",
+			"item": [
+				{
+					"name": "getAllEnroll",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}api/v1/enroll/get",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"v1",
+								"enroll",
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "storeEnroll",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "anu",
+									"type": "text"
+								},
+								{
+									"key": "number",
+									"value": "9818311552",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "phoinex.adhikari777@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "course_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}api/v1/enroll/store",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"v1",
+								"enroll",
+								"store"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "About",
+			"item": [
+				{
+					"name": "getAllAbout",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}api/v1/about/get",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"v1",
+								"about",
+								"get"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Terms",
+			"item": [
+				{
+					"name": "get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "privacy",
+			"item": [
+				{
+					"name": "getPrivacy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}api/v1/privacy/get",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"v1",
+								"privacy",
+								"get"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Success Gallery",
+			"item": [
+				{
+					"name": "getAllSuccess",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}api/v1/success/get",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"v1",
+								"success",
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSingleSuccess",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}api/v1/success/single/1",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"v1",
+								"success",
+								"single",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Notice",
+			"item": [
+				{
+					"name": "getAllNotice",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}api/v1/notice/get",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"v1",
+								"notice",
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSingle",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}api/v1/notice/get/1",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"v1",
+								"notice",
+								"get",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Event",
+			"item": [
+				{
+					"name": "getAllEvent",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}api/v1/event/get",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"v1",
+								"event",
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSingleEvent",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}api/v1/event/get/1",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"v1",
+								"event",
+								"get",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Internship",
+			"item": [
+				{
+					"name": "getAllInternship",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}api/v1/internship/get",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"v1",
+								"internship",
+								"get"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "",
+			"type": "string"
+		}
+	]
+}

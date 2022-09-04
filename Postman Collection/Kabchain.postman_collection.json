@@ -1,0 +1,964 @@
+{
+	"info": {
+		"_postman_id": "4bc3a7b6-1fda-47c2-bafb-17589ccb1cbf",
+		"name": "Kabchain",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16527445"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "login",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "admin@admin.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}user/login",
+							"host": [
+								"{{url}}user"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}user/logout",
+							"host": [
+								"{{url}}user"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "userRegister",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNTM0MWQ5NjRhNmVlNmYyMDVkMzg2MDhiZDUyNTljZDgwNTU1ZDYzNTNhODA0ZTRkNDNlYTgwNzFkYThkYmMzYWFmN2Y4NmQ2YWY5MDQ2ZDciLCJpYXQiOjE2Mjk4NzY2MjkuMzc2MTkyLCJuYmYiOjE2Mjk4NzY2MjkuMzc2MTk4LCJleHAiOjE2NjE0MTI2MjkuMzY2NTIsInN1YiI6IjIiLCJzY29wZXMiOltdfQ.YfuPda0VK2U5DbwymU96LHqFW3od29-ODJSjQ2xCNA1neSb_DKW5YGS-NH3ykGE0Flc9TN-e60QiAFHCPKnUHG6LH6F79MvGMbunT9-V8wzymwyU4CshgJuEk5mijfV-fnBAIfXEgwjjAC4ZSvWPyZEP8YaE2zo-18gaw83xllSQwPpSS_DFj_B614Wsz1Vfjv3iBCtkJ3Gh2L_WsDpwA-IGNYFo0ib3XuEwe4KX0dLW3Nk1s__ioOt7stJSq0A3So_FFwfuaEKIAzKnqXFk_W7_hIsSm7oRlQuYD0Q40-beeCljdimTCu612qcLIZ8zevygLFhjeJBoY3XJKU1mTl2xrqeh9Zw3fns1pMFPAf5-P18KinU8lE1gGGXv6TQW7DA0fr2bjTS0XJLo3REiPute4yJZjMF-37iHdwv1lcAcpREGyT3z8UWYF-MBfPMoFLxv-dBARGAM9BSfDFBEDhjzPR5DVN7EC_LNRAhFIYHqHcUpEaGYQ2oOB5enNZTfi9gTDS1rXgR7wtFyGAH9OX5JGiZVtWtqDlvXFDgJ_lHpCxlFsmBVqKKtkn6kJyBjfrA3C-Pk4EHHnrKTi5sw-gD-AKbQYcBw3gD44poGAqHkBhykjYylqc36NZplerelJOPqK4ejhcLY7JikbtpJJM9HL9eba1VHi7hmY0IFjHI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Rakesh Basnet",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "rbs@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345",
+									"type": "text"
+								},
+								{
+									"key": "confirm_password",
+									"value": "12345",
+									"type": "text"
+								},
+								{
+									"key": "phone_no",
+									"value": "1234567890",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}user/register",
+							"host": [
+								"{{url}}user"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUser",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZTRiYTAyMjMzN2EyOWVjMjUwZmY5NmIwZWQ2MWYzY2QxOTI5M2ZlOTAyNzA2ZTYyNjllNDllNjczMGMxNzNhOWM5MjA2MTA5OTA1NDA0NmIiLCJpYXQiOjE2Mjk3ODgyNTYuNjc5NjM2LCJuYmYiOjE2Mjk3ODgyNTYuNjc5NjQ0LCJleHAiOjE2NjEzMjQyNTYuNjU5MjQyLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.cYIEyXyBTbRc1jUa73bFN4qCDDttp4g2ZuHgyrBt-blZnd5M2G63ldsssmzP_8CJFZivualMV79QDEbpS0QB71jKIoJTxYUkQ1-4G6lIH6kEyCN-lUT-SNPalgSXVwndRHtKDahu7Smd-mbyDgXo1Zc5BloR6bMdmZc55hsSeuFagZgrfVvofXOd_bMP__Tyf-bziNznpW9ThPtYdPXAhFJJi93JP5OKu5bogTT-X4Lzu_DEADqPU9TXZMjBVlBb0BH8oJcltydoEssDtBozq-MG_vm3TgC9PNH28ktpMxGbjjAj_y098e1OMmuUPhCU9OlSbOhpbRcCnk2XnAcmAwK0HKGIevNs_Ghh5nDyPiI6v6UKJeUMzGNvmpXhiVqNL26lKlb49bs8XYFHoBozQPWJw-qAQN9eBGW-wR-epFFluSA-6g8nw_lPqLRMH2fx-Dx1C8cnl9t-g-ebMU05cxLc8njrB4RBEfC2Zlw9WnbpxST6sgFAv9LODWzs2eDoX25H0XSrTEItSx1yLceMjmGoYoMHZjJ7W_85prIpcR8tiXj0dBaNkN1Lf1QxjCgCUxFfQ8deaoOb4ntdzh2C006EEFTZDeQ8VmQ2NebDXUYiDQpomxakZQhnbJ7FFENkZ1J8JGpzFkP1v3FooaE3kl3A_LIgdfUibq_0y-iM8JQ",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Rakesh Basnet",
+									"type": "text"
+								},
+								{
+									"key": "hotel_name",
+									"value": "RB Hotel",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "rakeshbasnet086@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "confirm_password",
+									"value": "12345",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "phone",
+									"value": "1234567890",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "rakesh",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}user/update",
+							"host": [
+								"{{url}}user"
+							],
+							"path": [
+								"update"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Quote",
+			"item": [
+				{
+					"name": "requestQuote",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"address\":{\r\n        \"first_name\":\"Rakesh\",\r\n        \"last_name\":\"Basnet\",\r\n        \"emai\":\"rb@gmail.com\",\r\n        \"phone_no\":12345,\r\n        \"city\":\"Ktm\",\r\n        \"street\":\"Xavier Street\"\r\n    },\r\n    \"items\":[\r\n        {\r\n            \"name\":\"Speaker\",\r\n            \"quantity\":3,\r\n            \"price\":6000,\r\n            \"delivery_type\":\"On air\",\r\n            \"product_link\":\"facebook.com\"\r\n        },\r\n        {\r\n             \"name\":\"Earphone\",\r\n            \"quantity\":2,\r\n            \"price\":2500,\r\n            \"delivery_type\":\"On air\",\r\n            \"product_link\":\"youtube.com\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}requestQuote",
+							"host": [
+								"{{url}}requestQuote"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getQuotes",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}quote/get",
+							"host": [
+								"{{url}}quote"
+							],
+							"path": [
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getsingleQuote",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}quote/get/4",
+							"host": [
+								"{{url}}quote"
+							],
+							"path": [
+								"get",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "approveQuote",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}quote/approve/1",
+							"host": [
+								"{{url}}quote"
+							],
+							"path": [
+								"approve",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "BillingAddress",
+			"item": [
+				{
+					"name": "add",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_name",
+									"value": "Rak",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "Bs",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "rbs@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "phone_no",
+									"value": "12345",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "billing",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "ktm",
+									"type": "text"
+								},
+								{
+									"key": "street",
+									"value": "xavier road",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}billingaddress/save",
+							"host": [
+								"{{url}}billingaddress"
+							],
+							"path": [
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_name",
+									"value": "Rak",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "Bs",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "rbs@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "phone_no",
+									"value": "12345",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "billing",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "Lalitpur",
+									"type": "text"
+								},
+								{
+									"key": "street",
+									"value": "xavier road",
+									"type": "text"
+								},
+								{
+									"key": "id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}billingaddress/update",
+							"host": [
+								"{{url}}billingaddress"
+							],
+							"path": [
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}billingaddress/get",
+							"host": [
+								"{{url}}billingaddress"
+							],
+							"path": [
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSingleAddress",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}billingaddress/get/1",
+							"host": [
+								"{{url}}billingaddress"
+							],
+							"path": [
+								"get",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}billingaddress/delete/2",
+							"host": [
+								"{{url}}billingaddress"
+							],
+							"path": [
+								"delete",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "getCategory",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}category/get",
+							"host": [
+								"{{url}}category"
+							],
+							"path": [
+								"get"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "getAll",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}product/get",
+							"host": [
+								"{{url}}product"
+							],
+							"path": [
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getBySlug",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}product/get/factory-wholesales-modern-design-home-furniture-sofa-bed-with-storage-box",
+							"host": [
+								"{{url}}product"
+							],
+							"path": [
+								"get",
+								"factory-wholesales-modern-design-home-furniture-sofa-bed-with-storage-box"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "productsByCategory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}product/getByCategory/home-and-decor",
+							"host": [
+								"{{url}}product"
+							],
+							"path": [
+								"getByCategory",
+								"home-and-decor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "search_key",
+									"value": "Home",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}product/search",
+							"host": [
+								"{{url}}product"
+							],
+							"path": [
+								"search"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "getCart",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}cart/get/1",
+							"host": [
+								"{{url}}cart"
+							],
+							"path": [
+								"get",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "storeCart",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept-encoding": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "product_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "gas",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "8000",
+									"type": "text"
+								},
+								{
+									"key": "size",
+									"value": "16",
+									"type": "text"
+								},
+								{
+									"key": "color",
+									"value": "white",
+									"type": "text"
+								},
+								{
+									"key": "image_link",
+									"value": "https://www.pexels.com/photo/green-trees-on-mountain-covered-with-clouds-10334838/",
+									"type": "text"
+								},
+								{
+									"key": "qty",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "product_link",
+									"value": "https://www.pexels.com/photo/green-trees-on-mountain-covered-with-clouds-10334838/",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}cart/store",
+							"host": [
+								"{{url}}cart"
+							],
+							"path": [
+								"store"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "removeCartProduct",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}cart/remove/7",
+							"host": [
+								"{{url}}cart"
+							],
+							"path": [
+								"remove",
+								"7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

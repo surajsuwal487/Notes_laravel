@@ -1,0 +1,106 @@
+public function addToCart(Request $request)
+    {
+        $id = $request->id;
+        $product = Product::find($id);
+        if($product->image_link){
+            $image_link=$product->image_link;
+        }
+        else{
+            $image_link=URL('uploads/images/product/' . $product->image);
+        }
+        if (!$product) {
+            abort(404);
+        }
+
+        $cart = Cart::where('user_id', auth()->user()->id)->get();
+        // if cart is empty then this the first product
+        if (!$cart) {
+            $cart = [
+                $id => [
+                    "name" => $product->name,
+                    "quantity" => $request->quantity,
+                    "price" => $product->price,
+                    "image_link" => $image_link,
+                    'user_id' => auth()->user()->id,
+                    'product_id' => $product->id,
+                    "size" => null,
+                    'color' => null,
+                    "product_link" => $product->product_link,
+                ],
+            ];
+            if (isset($product->product_link)) {
+                $cart[$id]['product_link'] = $product->product_link;
+            } 
+            else {
+                $cart[$id]['product_link'] = URL('single-product/' . $product->slug);
+            }
+            return($cart->toArray());
+            $this->CartRepository->create($cart->toArray());
+            return redirect()->back()->with('success', 'Product added to cart successfully!');
+        }
+        // if cart not empty then check if this product exist then increment quantity
+        if (isset($cart[$id])) {
+            $cart[$id]['quantity']++;
+            $this->CartRepository->create($cart->toArray());
+            return redirect()->back()->with('success', 'Product added to cart successfully!');
+        }
+        // if item not exist in cart then add to cart with quantity = 1
+        else {
+            $cart= [
+                "name" => $product->name,
+                "quantity" => $request->quantity,
+                "price" => $product->price,
+                "image_link" => $image_link,
+                'user_id' => auth()->user()->id,
+                'product_id' => $product->id,
+                "size" => null,
+                'color' => null,
+                "product_link" => $product->product_link,
+            ];
+            // if (isset($product->product_link)) {
+            //     $cart[$id]['product_link'] = $product->product_link;
+            // }
+            // else {
+            //     $cart[$id]['product_link'] = URL('single-product/' . $product->slug);
+            // }
+
+            $this->CartRepository->create($cart->toArray());
+            return redirect()->back()->with('success', 'Product added to cart successfully!');
+        }
+    }
+
+    public function cartList()
+    {
+        $address=$this->billingaddressRepository->first();
+        return view("cartmanagement::cart",compact('address'));
+    }
+
+        public function addToCart(Request $request){
+        {
+            $id = $request->id;
+            $product = Product::find($id);
+
+            try {
+    
+                $data = [
+                    'user_id' => auth()->user()->id,
+                    'product_id' => $product->id,
+                    'name' => $product->name,
+                    'price' => $product->price,
+                    'size' => $product->size,
+                    'color' => $product->color,
+                    'image_link' => $product->image_link,
+                    'product_link' => $product->product_link,
+                    'qty' => $request->qty,
+                ];
+    
+    
+                $carts = $this->CartRepository->create($data);
+                return redirect()->back()->with('success', 'Product added to cart successfully!');
+            } catch (\Exception $e) {
+                dd($e);
+                $exception = $e->getMessage();
+                return redirect()->back()->with('error', $exception);
+            }
+        }
+    }
