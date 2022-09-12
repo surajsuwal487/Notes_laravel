@@ -1,0 +1,44 @@
+#PHP and Laravel Standard Namings
+   Model
+      Singular with first letter capital.
+      Example: Book, BookReview.
+   
+   Controller
+      Singular is prefered.
+      Example: BookController
+      Move controller code to Model, Service, Action and Job.
+   
+   Factory
+      Singular is prefered.
+      Example: BookFactory.
+   
+   Seeder
+      Singular is prefered.
+      Example: BookSeeder.
+   
+   Migration
+      create_book_reviews_table
+
+   Function
+      public function report.
+      public function getFinancialReportData.
+      Use return type in function.
+
+#Route Naming
+    /view-products
+    /create-product
+    /store-product
+    /edit-product
+    /update-product
+    /delete-product
+
+    /get
+    /store
+    /update
+    /delete
+
+#View Naming
+    view-products.blade.php
+    create-product.blade.php
+    edit-product.blade.php
+    product-detail.blade.php

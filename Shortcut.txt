@@ -1,0 +1,25 @@
+Shortcut Keys
+
+    ctrl + d
+        select the next occurence.
+
+    ctrl + b
+        open close side bar.
+
+    ctrl + right/left arrow key.
+        select a word.
+
+    alt + cick
+        add multiple cursor.
+
+    ctrl + q
+        close whatever you are viewing.
+
+    window + d
+        slow or hide the desktop.
+
+    ctrl + esc
+        open the start menu.
+
+    window + i
+        open settings.

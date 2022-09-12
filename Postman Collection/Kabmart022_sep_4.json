@@ -1,0 +1,1937 @@
+{
+	"info": {
+		"_postman_id": "0d75fdce-f7a4-49f8-9f32-c4f8fd7e779b",
+		"name": "Kabmart",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14596496"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "checkPhone",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "admin@admin.com",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "phone_no",
+									"value": "9842052361",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}user/check-phone",
+							"host": [
+								"{{url}}user"
+							],
+							"path": [
+								"check-phone"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "admin@admin.com",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "phone_no",
+									"value": "1234567890",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}user/login",
+							"host": [
+								"{{url}}user"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						},
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "Bearer {{token}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{url}}user/logout",
+							"host": [
+								"{{url}}user"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "facebook_login",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "login_type",
+									"value": "facebook",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Rakesh",
+									"type": "text"
+								},
+								{
+									"key": "id",
+									"value": "1223234",
+									"type": "text"
+								},
+								{
+									"key": "token",
+									"value": "asdsad98dsadas8",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "rakeshb@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "phone_no",
+									"value": "123456789",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}user/login",
+							"host": [
+								"{{url}}user"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "google_login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "login_type",
+									"value": "google",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "RB",
+									"type": "text"
+								},
+								{
+									"key": "id",
+									"value": "34002122",
+									"type": "text"
+								},
+								{
+									"key": "token",
+									"value": "234asda23weqewq1",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "rakeshbasnet732@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "phone_no",
+									"value": "1234567891",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}user/login",
+							"host": [
+								"{{url}}user"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "apple_login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "login_type",
+									"value": "apple",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "RBS",
+									"type": "text"
+								},
+								{
+									"key": "id",
+									"value": "124585256",
+									"type": "text"
+								},
+								{
+									"key": "token",
+									"value": "234asda2dsdw53s",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "rakeshbasnet73@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "phone_no",
+									"value": "123456789100",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}user/login",
+							"host": [
+								"{{url}}user"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "userRegister",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNTM0MWQ5NjRhNmVlNmYyMDVkMzg2MDhiZDUyNTljZDgwNTU1ZDYzNTNhODA0ZTRkNDNlYTgwNzFkYThkYmMzYWFmN2Y4NmQ2YWY5MDQ2ZDciLCJpYXQiOjE2Mjk4NzY2MjkuMzc2MTkyLCJuYmYiOjE2Mjk4NzY2MjkuMzc2MTk4LCJleHAiOjE2NjE0MTI2MjkuMzY2NTIsInN1YiI6IjIiLCJzY29wZXMiOltdfQ.YfuPda0VK2U5DbwymU96LHqFW3od29-ODJSjQ2xCNA1neSb_DKW5YGS-NH3ykGE0Flc9TN-e60QiAFHCPKnUHG6LH6F79MvGMbunT9-V8wzymwyU4CshgJuEk5mijfV-fnBAIfXEgwjjAC4ZSvWPyZEP8YaE2zo-18gaw83xllSQwPpSS_DFj_B614Wsz1Vfjv3iBCtkJ3Gh2L_WsDpwA-IGNYFo0ib3XuEwe4KX0dLW3Nk1s__ioOt7stJSq0A3So_FFwfuaEKIAzKnqXFk_W7_hIsSm7oRlQuYD0Q40-beeCljdimTCu612qcLIZ8zevygLFhjeJBoY3XJKU1mTl2xrqeh9Zw3fns1pMFPAf5-P18KinU8lE1gGGXv6TQW7DA0fr2bjTS0XJLo3REiPute4yJZjMF-37iHdwv1lcAcpREGyT3z8UWYF-MBfPMoFLxv-dBARGAM9BSfDFBEDhjzPR5DVN7EC_LNRAhFIYHqHcUpEaGYQ2oOB5enNZTfi9gTDS1rXgR7wtFyGAH9OX5JGiZVtWtqDlvXFDgJ_lHpCxlFsmBVqKKtkn6kJyBjfrA3C-Pk4EHHnrKTi5sw-gD-AKbQYcBw3gD44poGAqHkBhykjYylqc36NZplerelJOPqK4ejhcLY7JikbtpJJM9HL9eba1VHi7hmY0IFjHI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Rakesh Basnet",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "rakeshbasnet12@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345",
+									"type": "text"
+								},
+								{
+									"key": "confirm_password",
+									"value": "12345",
+									"type": "text"
+								},
+								{
+									"key": "phone_no",
+									"value": "1234567891",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}user/register",
+							"host": [
+								"{{url}}user"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUser",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZTRiYTAyMjMzN2EyOWVjMjUwZmY5NmIwZWQ2MWYzY2QxOTI5M2ZlOTAyNzA2ZTYyNjllNDllNjczMGMxNzNhOWM5MjA2MTA5OTA1NDA0NmIiLCJpYXQiOjE2Mjk3ODgyNTYuNjc5NjM2LCJuYmYiOjE2Mjk3ODgyNTYuNjc5NjQ0LCJleHAiOjE2NjEzMjQyNTYuNjU5MjQyLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.cYIEyXyBTbRc1jUa73bFN4qCDDttp4g2ZuHgyrBt-blZnd5M2G63ldsssmzP_8CJFZivualMV79QDEbpS0QB71jKIoJTxYUkQ1-4G6lIH6kEyCN-lUT-SNPalgSXVwndRHtKDahu7Smd-mbyDgXo1Zc5BloR6bMdmZc55hsSeuFagZgrfVvofXOd_bMP__Tyf-bziNznpW9ThPtYdPXAhFJJi93JP5OKu5bogTT-X4Lzu_DEADqPU9TXZMjBVlBb0BH8oJcltydoEssDtBozq-MG_vm3TgC9PNH28ktpMxGbjjAj_y098e1OMmuUPhCU9OlSbOhpbRcCnk2XnAcmAwK0HKGIevNs_Ghh5nDyPiI6v6UKJeUMzGNvmpXhiVqNL26lKlb49bs8XYFHoBozQPWJw-qAQN9eBGW-wR-epFFluSA-6g8nw_lPqLRMH2fx-Dx1C8cnl9t-g-ebMU05cxLc8njrB4RBEfC2Zlw9WnbpxST6sgFAv9LODWzs2eDoX25H0XSrTEItSx1yLceMjmGoYoMHZjJ7W_85prIpcR8tiXj0dBaNkN1Lf1QxjCgCUxFfQ8deaoOb4ntdzh2C006EEFTZDeQ8VmQ2NebDXUYiDQpomxakZQhnbJ7FFENkZ1J8JGpzFkP1v3FooaE3kl3A_LIgdfUibq_0y-iM8JQ",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Rakesh Basnet",
+									"type": "text"
+								},
+								{
+									"key": "hotel_name",
+									"value": "RB Hotel",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "rakeshbasnet086@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "confirm_password",
+									"value": "12345",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "phone",
+									"value": "1234567890",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "rakesh",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}user/update",
+							"host": [
+								"{{url}}user"
+							],
+							"path": [
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deactivateAccount",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{url}}user/deactivate",
+							"host": [
+								"{{url}}user"
+							],
+							"path": [
+								"deactivate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteAccount",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{url}}user/delete",
+							"host": [
+								"{{url}}user"
+							],
+							"path": [
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "placeOrder",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"shipping\": [\r\n        {\r\n                \"fullname\":\"Raman Shrestha\",\r\n                \"email\":\"RamanShrestha98@gmail.com\",\r\n                \"phone\":\"9860479654\",\r\n                \"city\":\"Kathmandu\",\r\n                \"postal_code\":\"3454\",\r\n                \"address_line\":\"maitidevi\"\r\n        }\r\n    ],\r\n\r\n    \"products\": [\r\n         {\r\n            \"id\": 1,\r\n            \"user_id\": 2,\r\n            \"name\": \"withref\",\r\n            \"slug\": \"withref\",\r\n            \"price\": 4000,\r\n            \"quantity\": 20,\r\n            \"color\": \"red\",\r\n            \"size\": \"Big\",\r\n            \"image\": \"red\",\r\n            \"brand_name\": \"red\",\r\n            \"unique_type\": \"red\",\r\n            \"created_at\": \"2022-02-15T06:07:47.000000Z\",\r\n            \"updated_at\": \"2022-02-15T06:07:47.000000Z\"\r\n        },\r\n        {\r\n            \"id\": 2,\r\n            \"user_id\": 2,\r\n            \"name\": \"withref\",\r\n            \"slug\": \"withref\",\r\n            \"price\": 2000,\r\n            \"quantity\": 2,\r\n            \"color\": \"red\",\r\n            \"size\": \"Big\",\r\n            \"image\": \"red\",\r\n            \"brand_name\": \"red\",\r\n            \"unique_type\": \"red\",\r\n            \"created_at\": \"2022-02-15T06:08:04.000000Z\",\r\n            \"updated_at\": \"2022-02-15T06:08:04.000000Z\"\r\n        }\r\n    ],\r\n        \"total\": 14600,\r\n        \"advance\":10000,\r\n        \"redeem_amount\": 400,\r\n        \"payment_status\": \"partial\",\r\n        \"payment_method\":\"Esewa\",\r\n        \"redeemUse\": false,\r\n        \"redeemUseQty\":0,\r\n        \"redeemgive\":false,\r\n        \"redeemgiveQty\":0\r\n\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}checkout",
+							"host": [
+								"{{url}}checkout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOrders",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}order/get",
+							"host": [
+								"{{url}}order"
+							],
+							"path": [
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getsingleOrder",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}order/get/1",
+							"host": [
+								"{{url}}order"
+							],
+							"path": [
+								"get",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cancelOrder",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUserOrders",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}my-orders",
+							"host": [
+								"{{url}}my-orders"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "BillingAddress",
+			"item": [
+				{
+					"name": "add",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_name",
+									"value": "Rak",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "Bs",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "rbs@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "phone_no",
+									"value": "12345",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "billing",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "ktm",
+									"type": "text"
+								},
+								{
+									"key": "street",
+									"value": "xavier road",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}billingaddress/save",
+							"host": [
+								"{{url}}billingaddress"
+							],
+							"path": [
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_name",
+									"value": "Rak",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "Bs",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "rbs@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "phone_no",
+									"value": "12345",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "billing",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "Lalitpur",
+									"type": "text"
+								},
+								{
+									"key": "street",
+									"value": "xavier road",
+									"type": "text"
+								},
+								{
+									"key": "id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}billingaddress/update",
+							"host": [
+								"{{url}}billingaddress"
+							],
+							"path": [
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}billingaddress/get",
+							"host": [
+								"{{url}}billingaddress"
+							],
+							"path": [
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSingleAddress",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}billingaddress/get/1",
+							"host": [
+								"{{url}}billingaddress"
+							],
+							"path": [
+								"get",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}billingaddress/get/1",
+							"host": [
+								"{{url}}billingaddress"
+							],
+							"path": [
+								"get",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "getProduct",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}product/get",
+							"host": [
+								"{{url}}product"
+							],
+							"path": [
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSingleProduct",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}product/get/rak-2",
+							"host": [
+								"{{url}}product"
+							],
+							"path": [
+								"get",
+								"rak-2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getByCategory",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}product/getByCategory/jb",
+							"host": [
+								"{{url}}product"
+							],
+							"path": [
+								"getByCategory",
+								"jb"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}product/search?search_key=ja",
+							"host": [
+								"{{url}}product"
+							],
+							"path": [
+								"search"
+							],
+							"query": [
+								{
+									"key": "search_key",
+									"value": "ja"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "getCategory",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}category/get",
+							"host": [
+								"{{url}}category"
+							],
+							"path": [
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCategoryById",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}category/get/rb",
+							"host": [
+								"{{url}}category"
+							],
+							"path": [
+								"get",
+								"rb"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "index",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{url}}cart/index",
+							"host": [
+								"{{url}}cart"
+							],
+							"path": [
+								"index"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Addtocart",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "Raman2",
+									"type": "text"
+								},
+								{
+									"key": "slug",
+									"value": "raman2",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "4000",
+									"type": "text"
+								},
+								{
+									"key": "quantity",
+									"value": "20",
+									"type": "text"
+								},
+								{
+									"key": "color",
+									"value": "red",
+									"type": "text"
+								},
+								{
+									"key": "size",
+									"value": "Big",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"value": "red",
+									"type": "text"
+								},
+								{
+									"key": "brand_name",
+									"value": "red",
+									"type": "text"
+								},
+								{
+									"key": "unique_type",
+									"value": "red",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}cart/store",
+							"host": [
+								"{{url}}cart"
+							],
+							"path": [
+								"store"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update cart",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"cart\":[\r\n   {\r\n            \"id\": 3,\r\n            \"product_id\": 2,\r\n            \"name\": \"Univereseasd\",\r\n            \"price\": 2000,\r\n            \"qty\": 2,\r\n            \"user_id\": 1,\r\n            \"created_at\": \"2021-12-29T06:39:59.000000Z\",\r\n            \"updated_at\": \"2021-12-29T06:39:59.000000Z\",\r\n            \"product\": null\r\n    },\r\n    {\r\n            \"id\": 3,\r\n            \"product_id\": 2,\r\n            \"name\": \"Univereseasd\",\r\n            \"price\": 2000,\r\n            \"qty\": 2,\r\n            \"user_id\": 1,\r\n            \"created_at\": \"2021-12-29T06:39:59.000000Z\",\r\n            \"updated_at\": \"2021-12-29T06:39:59.000000Z\",\r\n            \"product\": null\r\n    }\r\n]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}cart/update?product_id=1&name=qwert&price=2000&qty=20",
+							"host": [
+								"{{url}}cart"
+							],
+							"path": [
+								"update"
+							],
+							"query": [
+								{
+									"key": "product_id",
+									"value": "1"
+								},
+								{
+									"key": "name",
+									"value": "qwert"
+								},
+								{
+									"key": "price",
+									"value": "2000"
+								},
+								{
+									"key": "qty",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}cart/delete/9",
+							"host": [
+								"{{url}}cart"
+							],
+							"path": [
+								"delete",
+								"9"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Review",
+			"item": [
+				{
+					"name": "index",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}cd-admin/review/index",
+							"host": [
+								"{{url}}cd-admin"
+							],
+							"path": [
+								"review",
+								"index"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "product_slug",
+									"value": "2021-spring-new-all-match-men-s-casual-small-leather-shoes-korean-version-of-the-british-trend-of-men-s-shoes-peas-shoes",
+									"type": "text"
+								},
+								{
+									"key": "user_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "review",
+									"value": "hello world",
+									"type": "text"
+								},
+								{
+									"key": "rating",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "user",
+									"type": "text"
+								},
+								{
+									"key": "multipleImages[]",
+									"type": "file",
+									"src": [
+										"/D:/grayfia/909045.jpg",
+										"/D:/grayfia/267084336_475139297277969_6543474010500733431_n.jpg",
+										"/D:/grayfia/269909299_435775364759617_67250062149046428_n.jpg"
+									]
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}cd-admin/review/store",
+							"host": [
+								"{{url}}cd-admin"
+							],
+							"path": [
+								"review",
+								"store"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}cd-admin/review/show/3",
+							"host": [
+								"{{url}}cd-admin"
+							],
+							"path": [
+								"review",
+								"show",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "product_slug",
+									"value": "randomslug",
+									"type": "text"
+								},
+								{
+									"key": "user_id",
+									"value": "3 ",
+									"type": "text"
+								},
+								{
+									"key": "review",
+									"value": "asdasd das dasd",
+									"type": "text"
+								},
+								{
+									"key": "rating",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "user",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}cd-admin/review/update/1",
+							"host": [
+								"{{url}}cd-admin"
+							],
+							"path": [
+								"review",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "destroy",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}cd-admin/review/delete/1",
+							"host": [
+								"{{url}}cd-admin"
+							],
+							"path": [
+								"review",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "review-by-product",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}review-by-product?product_slug=2021-spring-new-all-match-men-s-casual-small-leather-shoes-korean-version-of-the-british-trend-of-men-s-shoes-peas-shoes",
+							"host": [
+								"{{url}}review-by-product"
+							],
+							"query": [
+								{
+									"key": "product_slug",
+									"value": "2021-spring-new-all-match-men-s-casual-small-leather-shoes-korean-version-of-the-british-trend-of-men-s-shoes-peas-shoes"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "multi-image-delete",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}multi-image-delete/2",
+							"host": [
+								"{{url}}multi-image-delete"
+							],
+							"path": [
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Payment",
+			"item": [
+				{
+					"name": "proceed",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "refercode",
+			"item": [
+				{
+					"name": "ReferCode",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}generate-refer-code",
+							"host": [
+								"{{url}}generate-refer-code"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "has Reward",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}has-reward",
+							"host": [
+								"{{url}}has-reward"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reward-check",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "qty",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}reward-check",
+							"host": [
+								"{{url}}reward-check"
+							],
+							"query": [
+								{
+									"key": "code",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "qty",
+									"value": "5",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "banner",
+			"item": [
+				{
+					"name": "banner-info",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}banner-info",
+							"host": [
+								"{{url}}banner-info"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
