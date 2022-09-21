@@ -1,0 +1,58 @@
+Laravel
+7 THING TO LEARN IN LARAVEL
+1. Payment Gateway
+2. Import/Export Data
+3. Email/sms/messaging
+4. Creating and consuming APIs
+5. Storing file in s3
+6. AWS world and Linux for servers and web environments
+7. Delivering ta code
+
+4 thing to learn beyond coding
+1. English Language(conversation)
+2. Writing(expressing your thought)
+3. Negotiation
+4. Respect and team work
+
+NEED TO KNOW
+1. logging
+2. localization
+
+What is dependency injection?
+when one class construct aceept another class object as argument.
+service container mange class dependencies.
+
+In Laravel, dependency injection is the process of injecting class dependencies into a class through a constructor or setter method. This allows your code to look clean and run faster.
+
+Static
+can be called without an instance of the class.
+
+Helper
+Because helper functions are globally available, you do not need to import any classes in order to use them.
+
+What is instantiation? In programming, instantiation is the creation of a real instance or particular realization of an abstraction or template, such as a class of objects or a computer process.
+
+Facade
+Non ststic function to static function. It is so clean and easy to test.
+
+Localization
+Laravel's localization features provide a convenient way to retrieve strings in various languages, allowing you to easily support multiple languages within your application.
+
+Object
+value of more than one type can be stored together.
+
+collection
+PHP arrays have a massive problem with not being OOP.
+It seems collections are very similar to arrays. For example, result retrieved via the get() method is a collection of data. But when we want to use it as an array we must use toArray() method. Why?
+The eloquent queries return outputs as collection instances.
+Laravel collection is a convenient wrapper to work with array data.
+
+Array vs Object
+// array
+ $user['name'] = 'Emanuil';
+
+ // object
+ $user->name = 'Emanuil';
+
+TRAIT
+A Trait is intended to reduce some limitations of single inheritance by enabling a developer to reuse sets of methods freely in several independent classes living in different class hierarchies.

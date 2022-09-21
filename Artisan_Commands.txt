@@ -1,16 +1,23 @@
 
 #PROJECT
 composer install
-compser update
-composer install --ignore-platform-reqs
 cp .env.example .env
 php artisan key:generate
 php artisan migrate:fresh --seed
 php artisan storage:link
+npm install 
+npm run dev
+
+compser update
+composer install --ignore-platform-reqs
 php artisan passport:install
 php artisan passport:keys
+php artisan session:table
 
 #VUE
+compser require laravel/ui
+php artisan ui vue --auth
+
 npm install -D vue@next @vue/compiler-sfc vue-loader@next
 add .vue() in webpack.mix.js
 npm install

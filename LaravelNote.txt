@@ -128,3 +128,13 @@ map()= going through each of the intem and transform it into something else.
 #Dependancy Injection
 	-Some function or classed depends upon other functions and classes. If we are injectin those dependency in classes it is said to be dependancy injection.
 
+#Testing
+
+*Unit Testing
+	Unit testing is the testing smallest function of the code.
+
+*Feature Testing
+	Testing the flow of the code.
+
+#Error
+SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`authorASCADE) (SQL: insert into `posts` (`user_id`, `title`, `category`, `updated_at`, `created_at`) values (1, Quia officia blanditiis qui delectus est magnam., Et quos ad temporibus. Sit nisi et magni officiis commodi occaecati. Illum est dolore adipisci deleniti. Beatae aut unde quia cum doloremque libero eveniet alias., 2022-09-15 08:19:53, 2022-09-15 08:19:53))

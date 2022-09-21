@@ -1,0 +1,67 @@
+Laravel strives to provide an amazing developer experience while providing powerful features such as thorough dependency injection, an expressive database abstraction layer, queues and scheduled jobs, unit and integration testing, and more.
+
+Laravel serialization
+In model you are returning collection which you can see array in steroids.
+
+dd()
+It is a helper function which is used to dump a variable's contents to the browser and stop the further script execution. It stands for Dump and Die.
+
+var_dump()
+The var_dump() function shows structured information about variables/expressions including its data type and value of the variable. The array and object are explored recursively with values to show their structure.
+
+Printing out object.
+{{ $car->name }}
+
+Printing out array.
+{{ $car['name'] }}
+
+API resource
+
+￼
+
+bigInt
+The int data type is the primary integer data type in SQL Server. The bigint data type is intended for use when integer values might exceed the range that is supported by the int data type.
+
+unsigned
+The thing is the ID field of parent table was built with $table->increments(‘id’);, which is, by default UNSIGNED. So, basically, you cannot build foreign key from signed field to a table with an unsigned ID field.
+
+signed vs unsigned
+A signed integer is a 32-bit datum that encodes an integer in the range [-2147483648 to 2147483647]. An unsigned integer is a 32-bit datum that encodes a nonnegative integer in the range [0 to 4294967295].
+
+int smallInt tinyInt
+
+￼
+
+￼
+String
+A string is any series of characters that are interpreted literally by a script. For example, "hello world" and "LKJH019283" are both examples of strings.
+
+string vs text
+The major difference between the two fields is how many characters you can put in these fields. A string field has a limit of 255 characters, whereas a text field has a character limit of 30,000 characters. A string field is a good choice if you wanting to store data like address, names, or simple custom data.
+
+text, mediumText and Longtext
+These are variable-length data types, and they come in three main variants: TEXT has a maximum length of 65,535 bytes—the same as VARCHAR. MEDIUMTEXT has a maximum length of about 16 megabytes. LONGTEXT has a maximum length of about 4 gigabytes.
+
+Char
+The CHAR data type stores character data in a fixed-length field. Data can be a string of single-byte or multibyte letters, numbers, and other characters that are supported by the code set of your database locale.
+
+char vs varchar
+The main difference between Char and Varchar is that char stores only fixed-length single string data types whereas varchar stores variable characters of different strings and the length depends on the string. 
+
+boolean
+The BOOLEAN data type is a 1-byte data type. The legal values for Boolean are true ('t'), false ('f'), or NULL. The values are not case sensitive.
+
+float
+The float data type represents a floating-point or decimal number. Examples of floats are 0.1243 and 12.245 . 
+
+float vs decimal vs double
+The Decimal, Double, and Float variable types are different in the way that they store the values. Precision is the main difference where float is a single precision (32 bit) floating point data type, double is a double precision (64 bit) floating point data type and decimal is a 128-bit floating point data type.
+
+binary
+Binary data is a type of data that is represented or displayed in the binary numeral system. 
+
+public - the property or method can be accessed from everywhere. This is default
+
+protected - the property or method can be accessed within the class and by classes derived from that class
+
+private - the property or method can ONLY be accessed within the class
